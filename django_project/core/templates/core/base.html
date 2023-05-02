@@ -6,17 +6,17 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
- 
+    {% block style %}{% endblock style %}
     <link rel="stylesheet" href="{% static 'core/style.css' %}">
     <title>{% block title %} {% endblock title %}</title>
 </head>
 <body>
     <header>
-        <h1>My Website</h1>
+        <a href="{% url 'core:index' %}"><h1>Task Lists</h1></a>
         <nav>
             <ul>
                 <li><a href="#">Login</a></li>
-                <li><a href="#">Register</a></li>
+                <li><a href="{% url 'accounts:register' %}">Register</a></li>
                 <li><a href="#">Tasks</a></li>
             </ul>
         </nav>
