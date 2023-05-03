@@ -13,3 +13,7 @@ class CustomUserCreationForm(UserCreationForm):
     email = forms.CharField(widget=forms.EmailInput())
     password1 = forms.CharField(widget=forms.PasswordInput(), label='Password')
     password2 = forms.CharField(widget=forms.PasswordInput(), label='Repeat password')
+
+class CustomAuthenticationForm(AuthenticationForm):
+    username = forms.CharField(widget=forms.TextInput(), label='Username')
+    password = forms.CharField(widget=forms.PasswordInput(), label='Password')

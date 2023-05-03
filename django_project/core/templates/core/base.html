@@ -15,9 +15,14 @@
         <a href="{% url 'core:index' %}"><h1>Task Lists</h1></a>
         <nav>
             <ul>
-                <li><a href="#">Login</a></li>
-                <li><a href="{% url 'accounts:register' %}">Register</a></li>
-                <li><a href="#">Tasks</a></li>
+                {% if request.user.is_authenticated %}
+                    <li><a href="#">Tasks</a></li>
+                    <li><a href="#">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                    <li><a href="{% url 'accounts:register' %}">Register</a></li> 
+                {% endif %}
+
             </ul>
         </nav>
     </header>
