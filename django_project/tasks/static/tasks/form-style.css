@@ -1,0 +1,87 @@
+/* Style for the New Task Heading */
+.new-task-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Style for the New Task Form */
+.new-task-form {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* Style for the Form Fields */
+.form-fields {
+  margin-bottom: 10px;
+}
+
+/* Style for the Form Errors */
+.form-errors {
+  background-color: #ffe8e8;
+  padding: 10px;
+  border-radius: 5px;
+  color: red;
+  margin-bottom: 10px;
+}
+
+/* Style for the Submit Button */
+.submit-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Style for the Submit Button when hovering */
+.submit-button:hover {
+  background-color: #3e8e41;
+}
+
+.new-task-form {
+    width: 500px;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%
+}
+
+.form-fields p {
+  margin: 0;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-fields label {
+  font-weight: bold;
+  margin-right: 20px;
+  width: 80px;
+}
+
+.form-fields textarea,
+.form-fields input {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.form-fields textarea {
+  height: 186px;
+  width: 280px;
+}
+
+.form-fields input {
+  height: 30px;
+  width: 280px;
+}

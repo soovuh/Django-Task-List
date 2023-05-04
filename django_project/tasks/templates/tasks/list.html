@@ -4,8 +4,8 @@
 {% block title %}Task List{% endblock title %}
 
 {% block content %}
-    <a href="#" class="new-task">+ New Task</a>
-    
+    <a href="{% url 'tasks:new' %}" class="new-task">+ New Task</a>
+    {% csrf_token %}
     {% for task in tasks %}
         <div class="task-list">
             <div class="task">
@@ -17,7 +17,7 @@
                     <p class="task-description">{{task.description}}</p>
                     <div class="task-actions">
                         <span class="check">
-                            <input type="checkbox" id="{{task.id}}" class="task-complete">
+                            <input type="checkbox" id="{{task.id}}" class="task-complete" {% if task.is_complete %}checked{% endif %}>
                             <label for="{{task.id}}">Complete</label>
                         </span>
                         <span>
