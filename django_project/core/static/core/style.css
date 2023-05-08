@@ -12,7 +12,7 @@ body {
 }
 
 header {
-  background-color: #333;
+  background-color: #2a8d2e;
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -40,20 +40,22 @@ nav a, header a {
 }
 
 nav a:hover, header a:hover {
-  color: #f00;
+  color: rgb(85, 85, 85);
 }
 
 main {
+  background: linear-gradient(90deg, #d8e309 0%, #06b8ff 100%);
   flex: 1;
   display: flex;
   justify-content: start;
   align-items: center;
   padding: 20px;
   flex-direction: column;
+  color: #fff;
 }
 
 footer {
-  background-color: #333;
+background-color: #2a8d2e;
   color: #fff;
   text-align: center;
   padding: 1em;

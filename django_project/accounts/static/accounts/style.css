@@ -1,16 +1,23 @@
 .head{
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .wrapper {
     width: 500px;
 }
 
+main {
+  align-items: center;
+  justify-content: center;
+}
+
 .register-form {
+
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f9f9f9;
+background-color: #3e8e413c;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
@@ -20,6 +27,7 @@
 }
 
 .register-form label {
+background-color: #3e8e4100;
   display: block;
   margin-bottom: 10px;
   font-weight: bold;
@@ -28,6 +36,7 @@
 .register-form input[type="text"],
 .register-form input[type="password"],
 .register-form input[type="email"] {
+  background-color: #3e8e4100;
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;

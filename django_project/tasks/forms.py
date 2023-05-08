@@ -13,3 +13,5 @@ class EditTaskForm(forms.ModelForm):
         model = Task
         fields = {'name', 'description', 'is_complete'}
 
+        
+
