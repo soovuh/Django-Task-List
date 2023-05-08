@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block style %}<link rel="stylesheet" href="{% static 'tasks/style.css' %}">{% endblock style %}
+{% block title %}Task List{% endblock title %}
+
+{% block content %}
+    <a href="{% url 'tasks:new' %}" class="new-task">+ New Task</a>
+    {% csrf_token %}
+    {% for task in tasks %}
+        <div class="task-list">
+            <div class="task">
+                <div class="task-header">
+                    <h2 class="task-name">{{task.name}}</h2>
+                    <span class="task-created">{{task.created_at}}</span>
+                </div>
+                <div class="task-body">
+                    <p class="task-description">{{task.description}}</p>
+                    <div class="task-actions">
+                        <span class="check">
+                            {% if task.is_complete %}
+                                <span class="completed"> Completed! </span>
+                            {% else %}
+                                <a href="{% url 'tasks:complete' task.id %}" class='task-complete'>Complete</a>
+                            {% endif %}
+                        </span>
+                        <span class="actions">
+                            <a href="{% url 'tasks:edit' task.id %}" class="task-edit">Edit</a>
+                            <a href="{% url 'tasks:delete' task.id %}" class="task-delete">Delete</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    {% endfor %}
+{% endblock content %}

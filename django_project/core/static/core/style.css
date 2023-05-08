@@ -46,8 +46,10 @@ nav a:hover, header a:hover {
 main {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
+  padding: 20px;
+  flex-direction: column;
 }
 
 footer {
