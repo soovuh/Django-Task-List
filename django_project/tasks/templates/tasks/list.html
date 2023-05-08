@@ -17,12 +17,15 @@
                     <p class="task-description">{{task.description}}</p>
                     <div class="task-actions">
                         <span class="check">
-                            <input type="checkbox" id="{{task.id}}" class="task-complete" {% if task.is_complete %}checked{% endif %}>
-                            <label for="{{task.id}}">Complete</label>
+                            {% if task.is_complete %}
+                                <span class="completed"> Completed! </span>
+                            {% else %}
+                                <a href="{% url 'tasks:complete' task.id %}" class='task-complete'>Complete</a>
+                            {% endif %}
                         </span>
-                        <span>
-                            <button class="task-edit">Edit</button>
-                            <button class="task-delete">Delete</button>
+                        <span class="actions">
+                            <a href="{% url 'tasks:edit' task.id %}" class="task-edit">Edit</a>
+                            <a href="{% url 'tasks:delete' task.id %}" class="task-delete">Delete</a>
                         </span>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_list_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 
@@ -15,16 +15,6 @@ def list(request):
         'tasks' : user_tasks,
     })
 
-@login_required
-def update_task(request):
-    if request.method == 'POST' and request.is_ajax():
-        task_id = request.POST.get('task_id')
-        is_complete = request.POST.get('is_complete')
-        task = Task.objects.get(id=task_id)
-        task.is_complete = (is_complete == 'true')
-        task.save()
-        return JsonResponse({'success': True})
-    return JsonResponse({'success': False})
 
 @login_required
 def new_task(request):
@@ -42,3 +32,37 @@ def new_task(request):
     })
 
 
+@login_required
+def complete_task(request, pk):
+    task = get_object_or_404(Task, pk=pk, created_by=request.user)
+
+    task.is_complete = True
+    task.save()
+
+    return redirect('tasks:list')
+
+
+@login_required
+def edit_task(request, pk):
+    task = get_object_or_404(Task, pk=pk, created_by=request.user)
+
+    if request.method =='POST':
+        form = EditTaskForm(request.POST, request.FILES, instance=task)
+
+        if form.is_valid():
+            form.save()
+            return redirect('tasks:list')
+    else:
+        form = EditTaskForm(instance=task)
+
+    return render(request, 'tasks/new.html', {
+        'form': form
+    })
+
+
+@login_required
+def delete_task(request, pk):
+    task = get_object_or_404(Task, pk=pk, created_by=request.user)
+    task.delete()
+
+    return redirect('tasks:list')
