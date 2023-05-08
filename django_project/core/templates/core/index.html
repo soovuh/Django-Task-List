@@ -1,7 +1,21 @@
 {% extends 'core/base.html' %}
-
+{% load static %}
+{% block style %}<link rel="stylesheet" href="{% static 'core/index.css' %}">{% endblock style %}
 {% block title %}Welcome!{%  endblock  %}
 
 {% block content %}
+    {% if request.user.is_authenticated %}
+        <div id="welcome-section">
+            <h1>Welcome back!</h1>
+            <p>Let`s create some tasks!</p>
+            <a href="{% url 'tasks:list' %}" class="btn">My task list</a>
+        </div>
+    {% else %}
+        <div id="welcome-section">
+            <h1>Welcome to our Website</h1>
+            <p>We are glad you're here. Our website is the perfect place to find what you're looking for.</p>
+            <a href="{% url 'accounts:register' %}" class="btn">Let's start</a>
+        </div>
+    {% endif %}
 
 {% endblock content %}

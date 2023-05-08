@@ -10,7 +10,7 @@ def register_view(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('core:index')
+            return redirect('tasks:list')
     else:
         form = CustomUserCreationForm()
     return render(request, 'accounts/register.html', {
