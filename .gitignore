@@ -3,3 +3,4 @@ secret_key.py
 __pycache__
 .idea
 db.sqlite3
+.idea
