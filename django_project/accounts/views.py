@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 
 from .forms import CustomUserCreationForm
 
+
 # Create your views here.
 def register_view(request):
     if request.method == 'POST':
@@ -16,6 +17,7 @@ def register_view(request):
     return render(request, 'accounts/register.html', {
         'form': form,
     })
+
 
 @login_required
 def logout_view(request):

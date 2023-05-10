@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'social_django',
+
     'core',
     'accounts',
     'tasks',
@@ -131,3 +134,17 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# oauth google
+AUTHENTICATION_BACKENDS = (
+
+
+    'social_core.backends.google.GoogleOAuth2',
+
+
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '971040284148-hmdo8bpk0rjvo4gv4smkfd670gentl6l.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
