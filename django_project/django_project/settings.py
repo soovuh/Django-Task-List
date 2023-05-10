@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from secret_key import secret_key
+from secret_key import secret_key, secret_google_auth, google_auth
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -146,5 +146,5 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '971040284148-hmdo8bpk0rjvo4gv4smkfd670gentl6l.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = google_auth
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = secret_google_auth
