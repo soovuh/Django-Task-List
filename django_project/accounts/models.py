@@ -8,8 +8,8 @@ from .managers import CustomUserManager
 
 class CustomUser(AbstractUser):
     username = None
-    email = models.EmailField(_('email adress'), unique=True)
-
+    email = models.EmailField(_('email address'), unique=True)
+    is_active = models.BooleanField(_('is active'), default=True)
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
