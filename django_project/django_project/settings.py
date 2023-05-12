@@ -159,4 +159,4 @@ REQUEST_NEW_EMAIL_TEMPLATE = 'accounts/request_new_email.html'
 LINK_EXPIRED_TEMPLATE = 'accounts/link_expired.html'
 NEW_EMAIL_SENT_TEMPLATE = 'accounts/new_email_sent.html'
 
-EXPIRE_AFTER = "1m"
+EXPIRE_AFTER = "1h"
