@@ -4,13 +4,13 @@
     <link rel="stylesheet" href="{% static 'accounts/style.css' %}">
     <link rel="stylesheet" href="{% static 'accounts/verification.css' %}">
 {% endblock style %}
-{% block title %}Verification Failed{% endblock title %}
+{% block title %}Verification Expired!{% endblock title %}
 
 {% block content %}
     <div class="wrapper">
         <h1 style="text-align: center; color: white;">
-            {{msg}}
+            {{ msg }}
         </h1>
-        <a class="btn" href="{% url 'request-new-link-from-email' %}">Send new email</a>
+        <a class="btn" href="{% url 'core:index' %}">Home</a>
     </div>
 {% endblock content %}

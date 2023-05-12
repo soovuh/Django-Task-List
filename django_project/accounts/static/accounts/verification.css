@@ -17,8 +17,35 @@
     height: 50px;
     text-decoration: none;
     color: #fff;
+    border:none;
+    cursor:pointer;
 }
 
 .btn:hover {
     background-color: #3e8e41;
+}
+
+fieldset {
+    width: 300px;
+    margin: auto;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+#id_email {
+    background-color: #3e8e4100;
+    width: 300px;
+    border-radius: 5px;
+    height: 50px;
+    padding: 10px;
+    color: #fff;
+}
+
+
+#id_email:focus {
+    border:none;
 }
