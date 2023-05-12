@@ -22,5 +22,6 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('tasks/', include('tasks.urls')),
     path('admin/', admin.site.urls),
-    url('', include('social_django.urls', namespace='social'))
+    url('', include('social_django.urls', namespace='social')),
+    path('verification/', include('verify_email.urls')),
 ]

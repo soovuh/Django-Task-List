@@ -1,0 +1,24 @@
+.wrapper {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 360px;
+    margin: 10px auto;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    width: 300px;
+    height: 50px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: #3e8e41;
+}
