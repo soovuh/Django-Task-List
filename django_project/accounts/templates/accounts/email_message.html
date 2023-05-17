@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cool Green Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(90deg, #d8e309 0%, #06b8ff 100%);
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(90deg, #d8e309 0%, #06b8ff 100%);
+            padding: 20px;
+            color: white;
+        }
+
+        .greetings {
+            background: linear-gradient(90deg, #d8e309 0%, #06b8ff 100%);
+            padding: 40px;
+            color: white;
+            text-align: center;
+        }
+
+        .greetings h1 {
+            font-size: 32px;
+            margin: 0;
+        }
+
+        .confirm-email {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .confirm-email a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #3e8e413c;
+            border-radius: 5px;
+        }
+        .confirm-email a:hover{
+            background-color: #3e8e41;
+        }
+
+
+
+        .footer {
+            background: linear-gradient(90deg, #d8e309 0%, #06b8ff 100%);
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="header">
+    <h1>Welcome to Task List App!</h1>
+</div>
+
+<div class="greetings">
+    <h1>Greetings!</h1>
+    <p>Thank you for joining us. Please confirm your email address to proceed.</p>
+    <div class="confirm-email">
+        <a href="{{ link }}">Confirm Email</a>
+    </div>
+</div>
+
+<div class="footer">
+    &copy; 2023 Task List. All rights reserved.
+</div>
+</body>
+
+</html>

@@ -1,6 +1,7 @@
 {% extends 'core/base.html' %}
 {% load static %}
-{% block style %}<link rel="stylesheet" href="{% static 'accounts/style.css' %}">{% endblock style %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'accounts/style.css' %}">{% endblock style %}
 {% block title %}Login{% endblock title %}
 
 {% block content %}
@@ -11,5 +12,9 @@
             {{ form.as_p }}
             <button type="submit">Submit</button>
         </form>
+        <div class="oauth">
+            <a href="{% url "social:begin" "google-oauth2" %}" class="google text">Or Sign in with google</a>
+            <a href="{% url "social:begin" "google-oauth2" %}" class="google"> <img class="google-icon" src="https://static.cdnlogo.com/logos/g/82/google-g-2015.svg"></a>
+        </div>
     </div>
 {% endblock content %}

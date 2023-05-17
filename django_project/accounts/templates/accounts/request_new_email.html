@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'accounts/style.css' %}">
+    <link rel="stylesheet" href="{% static 'accounts/verification.css' %}">
+{% endblock style %}
+{% block title %}New Email{% endblock title %}
+
+{% block content %}
+    <div class="wrapper">
+        <form method='POST' >
+            {% csrf_token %}
+
+            <fieldset>
+                {{form}}
+            </fieldset>
+
+            <div style="margin-top: 50px;">
+                <button class="btn btn-outline-info" type="submit">Request New Email</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

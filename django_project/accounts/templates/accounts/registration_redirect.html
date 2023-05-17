@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'accounts/style.css' %}">
+    <link rel="stylesheet" href="{% static 'accounts/verification.css' %}">
+{% endblock style %}
+{% block title %}Waiting for verification{% endblock title %}
+
+{% block content %}
+    <div class="wrapper">
+        <h1 style="text-align: center; color: white;">
+            Please confirm your email, we sent you an email to confirm
+        </h1>
+
+        <a class="btn" href="{% url 'request-new-link-from-email' %}">Send new email</a>
+
+    </div>
+{% endblock content %}
