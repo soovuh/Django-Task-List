@@ -153,10 +153,14 @@ DEFAULT_FROM_EMAIL = mail_email
 
 LOGIN_URL = 'accounts:login'
 
+# email verification templates
+HTML_MESSAGE_TEMPLATE = "accounts/email_message.html"
 VERIFICATION_SUCCESS_TEMPLATE = "accounts/verification_successful.html"
 VERIFICATION_FAILED_TEMPLATE = "accounts/verification_failed.html"
 REQUEST_NEW_EMAIL_TEMPLATE = 'accounts/request_new_email.html'
 LINK_EXPIRED_TEMPLATE = 'accounts/link_expired.html'
 NEW_EMAIL_SENT_TEMPLATE = 'accounts/new_email_sent.html'
 
+# mail settings
+SUBJECT = 'Task List Email Verification'
 EXPIRE_AFTER = "1h"
